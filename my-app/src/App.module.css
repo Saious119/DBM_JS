@@ -23,6 +23,16 @@
   color: #b318f0;
 }
 
+.buttons {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 20px;
+}
+
+.buttons button{
+  padding: 10px;
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

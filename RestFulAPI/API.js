@@ -6,11 +6,13 @@ var fs = require("fs");
 const { exec } = require('child_process');
 var spawn = require('child_process').spawn;
 var kill = require('tree-kill');
+var path = require('path');
 var UwUPid;
 var DickPid;
+var PiratePid;
 
 app.get('/StartUwUBot', function (req, res) {
-    UwUPid = exec('node ../../../Discord-Bots/UwUBot/uwu.js',{detached: true}, function (err, stdout, stderr) {
+    UwUPid = exec('node uwu.js', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/UwUBot')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
             return res.send("Error");
@@ -30,7 +32,7 @@ app.get('/KillUwUBot', function(req, res){
 })
 
 app.get('/StartDickJohnson', function(req, res){
-    DickPid = exec('dotnet run --project ../../../Discord-Bots/DickJohnson',{detached: true}, function(err, stdout, stderr){
+    DickPid = exec('dotnet run', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/DickJohnson')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
             return res.send("Error");
@@ -44,6 +46,25 @@ app.get('/KillDickJohnson', function(req, res){
     console.log(DickPid.pid);
     process.stdin.pause();
     kill(DickPid.pid, "SIGTERM");
+    console.error("Killded good");
+    res.send("Killded");
+})
+
+app.get('/StartPirateBot', function(req, res){
+    PiratePid = exec('./PirateBot', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/PirateBot')}, function (err, stdout, stderr) {
+        if (err) {
+            console.error(`exec error: ${err}`);
+            return res.send("Error");
+        }  
+        console.log("Pirate Bot Started");
+        return res.send("Success");
+    });
+})
+
+app.get('/KillPirateBot', function(req, res){
+    console.log(DickPid.pid);
+    process.stdin.pause();
+    kill(PiratePid.pid, "SIGTERM");
     console.error("Killded good");
     res.send("Killded");
 })
