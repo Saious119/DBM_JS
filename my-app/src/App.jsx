@@ -9,16 +9,10 @@ function App() {
         <p>
           Edit <code>src/App.jsx</code> and save to reload.
         </p>
-        <a
-          class={styles.link}
-          href="https://github.com/solidjs/solid"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn Solid
-        </a>
         <button onClick={()=> fetch("http://localhost:8081/StartUwUBot")}>suck peen</button>
         <button onClick={() => fetch("http://localhost:8081/KillUwUBot")}>Catch Ligma</button>
+        <button onClick={() => fetch("http://localhost:8081/StartDickJohnson")}>Messure the peen</button>
+        <button onClick={() => fetch("http://localhost:8081/KillDickJohnson")}>All Balls no Shaft</button>
       </header>
     </div>
   );
