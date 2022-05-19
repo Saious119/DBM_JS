@@ -1,12 +1,24 @@
 var express = require('express');
 const cors = require('cors');
 var app = express();
-app.use(cors());
+app.use(cors({
+	origin: "https://cringebots.dev", // restrict calls to those this address
+    methods: "GET" // only allow GET requests
+}));
 var fs = require("fs");
 const { exec } = require('child_process');
 var spawn = require('child_process').spawn;
 var kill = require('tree-kill');
 var path = require('path');
+const port = process.env.SERVER_PORT || 8081;
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 var UwUPid;
 var DickPid;
 var PiratePid;
