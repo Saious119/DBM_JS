@@ -2,8 +2,9 @@ var express = require('express');
 const cors = require('cors');
 var app = express();
 app.use(cors({
-	origin: "https://cringebots.dev", // restrict calls to those this address
-    methods: "GET" // only allow GET requests
+	//origin: "https://cringebots.dev", // restrict calls to those this address
+    origin: "*",
+	methods: "GET" // only allow GET requests
 }));
 var fs = require("fs");
 const { exec } = require('child_process');
