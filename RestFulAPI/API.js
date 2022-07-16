@@ -97,11 +97,12 @@ app.get('/KillPirateBot', function(req, res){
     console.error("Killded good");
     res.send("Killded");
 })
-
-var server = app.listen(4000, 'fortrash.com/cringebots', function () {
+/*
+var server = app.listen(4000, 'https://fortrash.com/cringebots', function () {
    var host = server.address().address
    var port = server.address().port
    console.log("Example app listening at http://%s:%s", host, port)
 })
+*/
 
 
