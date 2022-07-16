@@ -98,10 +98,10 @@ app.get('/KillPirateBot', function(req, res){
     res.send("Killded");
 })
 
-/*var server = app.listen(8081, '0.0.0.0', function () {
+var server = app.listen(4000, 'fortrash.com/cringebots', function () {
    var host = server.address().address
    var port = server.address().port
    console.log("Example app listening at http://%s:%s", host, port)
 })
-*/
+
 
