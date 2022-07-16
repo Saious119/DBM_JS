@@ -1,4 +1,5 @@
 var express = require('express');
+const https = require("https");
 const cors = require('cors');
 var app = express();
 app.use(cors({
@@ -11,7 +12,7 @@ const { exec } = require('child_process');
 var spawn = require('child_process').spawn;
 var kill = require('tree-kill');
 var path = require('path');
-const port = process.env.SERVER_PORT || 8081;
+//const port = process.env.SERVER_PORT || 8081;
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
@@ -20,6 +21,21 @@ app.use(function(req, res, next) {
   );
   next();
 });
+
+https
+    .createServer(
+    // Provide the private and public key to the server by reading
+    // each file's content with the readFileSync() method.
+    {
+        key: fs.readFileSync("key.pem"),
+        cert: fs.readFileSync("cert.pem"),
+    },
+        app
+)
+.listen(4000, () => {
+    console.log("serever is runing at port 4000");
+});
+
 var UwUPid;
 var DickPid;
 var PiratePid;
@@ -82,8 +98,10 @@ app.get('/KillPirateBot', function(req, res){
     res.send("Killded");
 })
 
-var server = app.listen(8081, '0.0.0.0', function () {
+/*var server = app.listen(8081, '0.0.0.0', function () {
    var host = server.address().address
    var port = server.address().port
    console.log("Example app listening at http://%s:%s", host, port)
 })
+*/
+
