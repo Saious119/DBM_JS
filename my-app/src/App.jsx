@@ -10,8 +10,8 @@ function App() {
           Edit <code>src/App.jsx</code> and save to reload. v1.0.1
         </p>
         <div class={styles.buttons}>
-          <button onClick={() => fetch("https://fortrash.com:4000/StartUwUBot")}>suck peen</button>
-          <button onClick={() => fetch("https://fortrash.com:4000/KillUwUBot")}>Catch Ligma</button>
+          <button onClick={() => fetch("https://www.fortrash.com:4000/StartUwUBot")}>suck peen</button>
+          <button onClick={() => fetch("https://www.fortrash.com:4000/KillUwUBot")}>Catch Ligma</button>
           <button onClick={() => fetch("https://fortrash.com:4000/StartDickJohnson")}>Messure the peen</button>
           <button onClick={() => fetch("https://fortrash.com:4000/KillDickJohnson")}>All Balls no Shaft</button>
           <button onClick={() => fetch("https://fortrash.com:4000/StartPirateBot")}>ARGGGG</button>
