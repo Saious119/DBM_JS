@@ -235,6 +235,14 @@ app.get('/GitUpdateDBM', function(req, res){
         console.log("pulled latest");
         return res.send("Success");
     })
+    exec('./deploy', {detached: true, cwd: path.resolve(__dirname, '/home/andym/DBM_JS/DBM_JS/')}, function(err, stdout, stderr){
+        if(err){
+            console.error(`exec error: ${err}`);
+            return res.send("Error");
+        }
+        console.log("deployed latest");
+        return res.send("Success");
+    })
 })
 
 app.get('/GitUpdateDiscordBots', function(req, res){
