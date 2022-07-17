@@ -39,6 +39,7 @@ https
 var UwUPid;
 var DickPid;
 var PiratePid;
+var WSBPid;
 
 app.get('/StartUwUBot', function (req, res) {
     UwUPid = exec('node uwu.js', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/UwUBot')}, function (err, stdout, stderr) {
@@ -91,18 +92,31 @@ app.get('/StartPirateBot', function(req, res){
 })
 
 app.get('/KillPirateBot', function(req, res){
-    console.log(DickPid.pid);
+    console.log(PiratePid.pid);
     process.stdin.pause();
     kill(PiratePid.pid, "SIGTERM");
     console.error("Killded good");
     res.send("Killded");
 })
-/*
-var server = app.listen(4000, 'https://fortrash.com/cringebots', function () {
-   var host = server.address().address
-   var port = server.address().port
-   console.log("Example app listening at http://%s:%s", host, port)
+
+app.get('/StartWSB', function(req, res){
+    WSBPid = exec('./WSB', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/WSB')}, function (err, stdout, stderr) {
+        if (err) {
+            console.error(`exec error: ${err}`);
+            return res.send("Error");
+        }  
+        console.log("WSB Started");
+        return res.send("Success");
+    });
 })
-*/
+
+app.get('/KillWSB', function(req, res){
+    console.log(WSBPid.pid);
+    process.stdin.pause();
+    kill(WSBPid.pid, "SIGTERM");
+    console.error("Killded good");
+    res.send("Killded");
+})
+
 
 
