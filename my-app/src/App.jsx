@@ -29,6 +29,7 @@ function App() {
           <button onClick={() => fetch("https://www.fortrash.com:4000/StartTerryDavisBot")}>Holy C</button>
           <button onClick={() => fetch("https://www.fortrash.com:4000/KillTerryDavisBot")}>CIA</button>
           <br></br>
+          <br></br>
           <button onClick={() => fetch("https://www.fortrash.com:4000//GitUpdateDBM")}>This Website is Old</button>
           <button onClick={() => fetch("https://www.fortrash.com:4000//GitUpdateDiscordBots")}>Fresh Bot Delivery</button>
         </div>
