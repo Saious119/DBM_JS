@@ -37,8 +37,13 @@ https
 });
 
 var UwUPid;
+var JonTronPid;
+var OwOBotPid;
+var OyVeyPid
 var DickPid;
 var PiratePid;
+var TarotPid;
+var TerryDavisPid;
 var WSBPid;
 
 app.get('/StartUwUBot', function (req, res) {
@@ -60,6 +65,67 @@ app.get('/KillUwUBot', function(req, res){
     console.error("Killded good");
     res.send("Killded");
 })
+
+app.get('/StartJonTronBot', function (req, res) {
+    JonTronPid = exec('node jontron.js', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/JonTronBot')}, function (err, stdout, stderr) {
+        if (err) {
+            console.error(`exec error: ${err}`);
+            return res.send("Error");
+        }  
+        console.log("JonTronBot Started");
+        return res.send("Success");
+    });
+    console.log(JonTronPid.pid);
+})
+
+app.get('/KillJonTronBot', function(req, res){
+    console.log(JonTronPid.pid);
+    process.stdin.pause();
+    kill(JonTronPid.pid, "SIGTERM");
+    console.error("Killded good");
+    res.send("Killded");
+})
+
+app.get('/StartOwOBot', function (req, res) {
+    OwOBotPid = exec('node OwOBot.js', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/OwOBot')}, function (err, stdout, stderr) {
+        if (err) {
+            console.error(`exec error: ${err}`);
+            return res.send("Error");
+        }  
+        console.log("OwOBot Started");
+        return res.send("Success");
+    });
+    console.log(OwOBotPid.pid);
+})
+
+app.get('/KillOwOBot', function(req, res){
+    console.log(OwOBotPid.pid);
+    process.stdin.pause();
+    kill(OwOBotPid.pid, "SIGTERM");
+    console.error("Killded good");
+    res.send("Killded");
+})
+
+app.get('/StartOyVeyBot', function (req, res) {
+    OyVeyPid = exec('node OyVeyBot.js', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/OyVeyBot')}, function (err, stdout, stderr) {
+        if (err) {
+            console.error(`exec error: ${err}`);
+            return res.send("Error");
+        }  
+        console.log("OyVeyBot Started");
+        return res.send("Success");
+    });
+    console.log(OyVeyPid.pid);
+})
+
+app.get('/KillOyVeyBot', function(req, res){
+    console.log(OyVeyPid.pid);
+    process.stdin.pause();
+    kill(OyVeyPid.pid, "SIGTERM");
+    console.error("Killded good");
+    res.send("Killded");
+})
+
 
 app.get('/StartDickJohnson', function(req, res){
     DickPid = exec('dotnet run', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/DickJohnson')}, function (err, stdout, stderr) {
@@ -99,6 +165,46 @@ app.get('/KillPirateBot', function(req, res){
     res.send("Killded");
 })
 
+app.get('/StartTarotBot', function (req, res) {
+    TarotPid = exec('node tarot.js', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/TarotBot')}, function (err, stdout, stderr) {
+        if (err) {
+            console.error(`exec error: ${err}`);
+            return res.send("Error");
+        }  
+        console.log("TarotBot Started");
+        return res.send("Success");
+    });
+    console.log(TarotPid.pid);
+})
+
+app.get('/KillTarotBot', function(req, res){
+    console.log(TarotPid.pid);
+    process.stdin.pause();
+    kill(TarotPid.pid, "SIGTERM");
+    console.error("Killded good");
+    res.send("Killded");
+})
+
+app.get('/StartTerryDavisBot', function (req, res) {
+    TerryDavisPid = exec('node terrydavisbot.js', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/TerryDavisBot')}, function (err, stdout, stderr) {
+        if (err) {
+            console.error(`exec error: ${err}`);
+            return res.send("Error");
+        }  
+        console.log("TerryDavisBot Started");
+        return res.send("Success");
+    });
+    console.log(TerryDavisPid.pid);
+})
+
+app.get('/KillTerryDavisBot', function(req, res){
+    console.log(TerryDavisPid.pid);
+    process.stdin.pause();
+    kill(TerryDavisPid.pid, "SIGTERM");
+    console.error("Killded good");
+    res.send("Killded");
+})
+
 app.get('/StartWSB', function(req, res){
     WSBPid = exec('./WSB', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/WSB')}, function (err, stdout, stderr) {
         if (err) {
@@ -116,6 +222,30 @@ app.get('/KillWSB', function(req, res){
     kill(WSBPid.pid, "SIGTERM");
     console.error("Killded good");
     res.send("Killded");
+})
+
+
+// GIT UPDATE
+app.get('/GitUpdateDBM', function(req, res){
+    exec('git pull', {detached: true, cwd: path.resolve(__dirname, '/home/andym/DBM_JS/DBM_JS/')}, function(err, stdout, stderr){
+        if(err){
+            console.error(`exec error: ${err}`);
+            return res.send("Error");
+        }
+        console.log("pulled latest");
+        return res.send("Success");
+    })
+})
+
+app.get('/GitUpdateDiscordBots', function(req, res){
+    exec('git pull', {detached: true, cwd: path.resolve(__dirname, '/home/andym/Discord-Bots/')}, function(err, stdout, stderr){
+        if(err){
+            console.error(`exec error: ${err}`);
+            return res.send("Error");
+        }
+        console.log("pulled latest");
+        return res.send("Success");
+    })
 })
 
 
