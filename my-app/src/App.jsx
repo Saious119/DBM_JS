@@ -7,7 +7,7 @@ function App() {
       <header class={styles.header}>
         <img src={logo} class={styles.logo} alt="logo" />
         <p>
-          Welcome To DBM! (Discord Bot Manager)
+          Welcome To DBM! (Discord Bot Manager) v1.0.0
         </p>
         <div class={styles.buttons}>
           <button onClick={() => fetch("https://www.fortrash.com:4000/StartUwUBot")}>suck peen</button>
@@ -30,8 +30,8 @@ function App() {
           <button onClick={() => fetch("https://www.fortrash.com:4000/KillTerryDavisBot")}>CIA</button>
           <br></br>
           <br></br>
-          <button onClick={() => fetch("https://www.fortrash.com:4000//GitUpdateDBM")}>This Website is Old</button>
-          <button onClick={() => fetch("https://www.fortrash.com:4000//GitUpdateDiscordBots")}>Fresh Bot Delivery</button>
+          <button onClick={() => fetch("https://www.fortrash.com:4000/GitUpdateDBM")}>This Website is Old</button>
+          <button onClick={() => fetch("https://www.fortrash.com:4000/GitUpdateDiscordBots")}>Fresh Bot Delivery</button>
         </div>
       </header>
     </div>
