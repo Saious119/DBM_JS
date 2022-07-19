@@ -52,11 +52,11 @@ app.get('/StartUwUBot', function (req, res) {
             console.error(`exec error: ${err}`);
             return res.send("Error");
         }  
+        console.log(stdout);
+        console.error(stderr);
         console.log("UwUBot Started");
         return res.send("Success");
     });
-    console.log(stdout);
-    console.error(stderr);
     console.log(UwUPid.pid);
 })
 
