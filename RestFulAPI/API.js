@@ -233,7 +233,7 @@ app.get('/GitUpdateDBM', function(req, res){
             return res.send("Error");
         }
         console.log("pulled latest");
-        exec('bash deploy', {detached: true, cwd: path.resolve(__dirname, '/home/andym/DBM_JS/DBM_JS/')}, function(err, stdout, stderr){
+        exec('bash deploy.sh', {detached: true, cwd: path.resolve(__dirname, '/home/andym/DBM_JS/DBM_JS/')}, function(err, stdout, stderr){
             if(err){
                 console.error(`exec error: ${err}`);
                 return res.send("Error");
