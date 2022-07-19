@@ -136,6 +136,7 @@ app.get('/StartDickJohnson', function(req, res){
         console.log("Dick Johnson Started");
         return res.send("Success");
     });
+    console.log(DickPid.pid);
 })
 
 app.get('/KillDickJohnson', function(req, res){
@@ -155,6 +156,7 @@ app.get('/StartPirateBot', function(req, res){
         console.log("Pirate Bot Started");
         return res.send("Success");
     });
+    console.log(PiratePid.pid);
 })
 
 app.get('/KillPirateBot', function(req, res){
@@ -214,6 +216,7 @@ app.get('/StartWSB', function(req, res){
         console.log("WSB Started");
         return res.send("Success");
     });
+    console.log(WSBPid.pid);
 })
 
 app.get('/KillWSB', function(req, res){
