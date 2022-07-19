@@ -55,6 +55,8 @@ app.get('/StartUwUBot', function (req, res) {
         console.log("UwUBot Started");
         return res.send("Success");
     });
+    console.log(stdout);
+    console.error(stderr);
     console.log(UwUPid.pid);
 })
 
@@ -72,6 +74,8 @@ app.get('/StartJonTronBot', function (req, res) {
             console.error(`exec error: ${err}`);
             return res.send("Error");
         }  
+        console.log(stdout);
+        console.error(stderr);
         console.log("JonTronBot Started");
         return res.send("Success");
     });
@@ -92,6 +96,8 @@ app.get('/StartOwOBot', function (req, res) {
             console.error(`exec error: ${err}`);
             return res.send("Error");
         }  
+        console.log(stdout);
+        console.error(stderr);
         console.log("OwOBot Started");
         return res.send("Success");
     });
@@ -111,7 +117,9 @@ app.get('/StartOyVeyBot', function (req, res) {
         if (err) {
             console.error(`exec error: ${err}`);
             return res.send("Error");
-        }  
+        } 
+        console.log(stdout);
+        console.error(stderr); 
         console.log("OyVeyBot Started");
         return res.send("Success");
     });
@@ -133,6 +141,8 @@ app.get('/StartDickJohnson', function(req, res){
             console.error(`exec error: ${err}`);
             return res.send("Error");
         }  
+        console.log(stdout);
+        console.error(stderr);
         console.log("Dick Johnson Started");
         return res.send("Success");
     });
@@ -152,7 +162,9 @@ app.get('/StartPirateBot', function(req, res){
         if (err) {
             console.error(`exec error: ${err}`);
             return res.send("Error");
-        }  
+        }
+        console.log(stdout);
+        console.error(stderr);
         console.log("Pirate Bot Started");
         return res.send("Success");
     });
@@ -174,6 +186,8 @@ app.get('/StartTarotBot', function (req, res) {
             return res.send("Error");
         }  
         console.log("TarotBot Started");
+        console.log(stdout);
+        console.error(stderr);
         return res.send("Success");
     });
     console.log(TarotPid.pid);
@@ -193,6 +207,8 @@ app.get('/StartTerryDavisBot', function (req, res) {
             console.error(`exec error: ${err}`);
             return res.send("Error");
         }  
+        console.log(stdout);
+        console.error(stderr);
         console.log("TerryDavisBot Started");
         return res.send("Success");
     });
@@ -213,6 +229,8 @@ app.get('/StartWSB', function(req, res){
             console.error(`exec error: ${err}`);
             return res.send("Error");
         }  
+        console.log(stdout);
+        console.error(stderr);
         console.log("WSB Started");
         return res.send("Success");
     });
