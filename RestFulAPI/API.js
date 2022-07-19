@@ -241,7 +241,6 @@ app.get('/GitUpdateDBM', function(req, res){
             console.log("deployed latest");
             return res.send("Success");
         })
-        return res.send("Success");
     })
 })
 
