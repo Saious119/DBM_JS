@@ -238,6 +238,8 @@ app.get('/GitUpdateDBM', function(req, res){
                 console.error(`exec error: ${err}`);
                 return res.send("Error");
             }
+            console.log(stdout);
+            console.error(stderr);
             console.log("deployed latest");
             return res.send("Success");
         })
