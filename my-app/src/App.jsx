@@ -7,7 +7,7 @@ function App() {
       <header class={styles.header}>
         <img src={logo} class={styles.logo} alt="logo" />
         <p>
-          Welcome To DBM! (Discord Bot Manager) v1.0.1
+          Welcome To DBM! (Discord Bot Manager) v1.0.2
         </p>
         <div class={styles.buttons}>
           <button onClick={() => fetch("https://www.fortrash.com:4000/StartUwUBot")}>suck peen</button>
