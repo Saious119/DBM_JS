@@ -47,7 +47,7 @@ var TerryDavisPid;
 var WSBPid;
 
 app.get('/StartUwUBot', function (req, res) {
-    UwUPid = exec('node uwu.js', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/UwUBot')}, function (err, stdout, stderr) {
+    UwUPid = exec('node uwu.js &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/UwUBot')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
             return res.send("Error");
