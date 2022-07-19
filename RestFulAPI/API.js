@@ -67,7 +67,7 @@ app.get('/KillUwUBot', function(req, res){
 })
 
 app.get('/StartJonTronBot', function (req, res) {
-    JonTronPid = exec('node jontron.js', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/JonTronBot')}, function (err, stdout, stderr) {
+    JonTronPid = exec('node jontron.js &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/JonTronBot')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
             return res.send("Error");
@@ -87,7 +87,7 @@ app.get('/KillJonTronBot', function(req, res){
 })
 
 app.get('/StartOwOBot', function (req, res) {
-    OwOBotPid = exec('node OwOBot.js', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/OwOBot')}, function (err, stdout, stderr) {
+    OwOBotPid = exec('node OwOBot.js &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/OwOBot')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
             return res.send("Error");
@@ -107,7 +107,7 @@ app.get('/KillOwOBot', function(req, res){
 })
 
 app.get('/StartOyVeyBot', function (req, res) {
-    OyVeyPid = exec('node OyVeyBot.js', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/OyVeyBot')}, function (err, stdout, stderr) {
+    OyVeyPid = exec('node OyVeyBot.js &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/OyVeyBot')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
             return res.send("Error");
@@ -128,7 +128,7 @@ app.get('/KillOyVeyBot', function(req, res){
 
 
 app.get('/StartDickJohnson', function(req, res){
-    DickPid = exec('dotnet run', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/DickJohnson')}, function (err, stdout, stderr) {
+    DickPid = exec('dotnet run &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/DickJohnson')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
             return res.send("Error");
@@ -147,7 +147,7 @@ app.get('/KillDickJohnson', function(req, res){
 })
 
 app.get('/StartPirateBot', function(req, res){
-    PiratePid = exec('./PirateBot', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/PirateBot')}, function (err, stdout, stderr) {
+    PiratePid = exec('./PirateBot &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/PirateBot')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
             return res.send("Error");
@@ -166,7 +166,7 @@ app.get('/KillPirateBot', function(req, res){
 })
 
 app.get('/StartTarotBot', function (req, res) {
-    TarotPid = exec('node tarot.js', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/TarotBot')}, function (err, stdout, stderr) {
+    TarotPid = exec('node tarot.js &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/TarotBot')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
             return res.send("Error");
@@ -186,7 +186,7 @@ app.get('/KillTarotBot', function(req, res){
 })
 
 app.get('/StartTerryDavisBot', function (req, res) {
-    TerryDavisPid = exec('node terrydavisbot.js', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/TerryDavisBot')}, function (err, stdout, stderr) {
+    TerryDavisPid = exec('node terrydavisbot.js &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/TerryDavisBot')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
             return res.send("Error");
@@ -206,7 +206,7 @@ app.get('/KillTerryDavisBot', function(req, res){
 })
 
 app.get('/StartWSB', function(req, res){
-    WSBPid = exec('./WSB', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/WSB')}, function (err, stdout, stderr) {
+    WSBPid = exec('./WSB &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/WSB')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
             return res.send("Error");
@@ -233,7 +233,7 @@ app.get('/GitUpdateDBM', function(req, res){
             return res.send("Error");
         }
         console.log("pulled latest");
-        exec('./deploy', {detached: true, cwd: path.resolve(__dirname, '/home/andym/DBM_JS/DBM_JS/')}, function(err, stdout, stderr){
+        exec('bash deploy', {detached: true, cwd: path.resolve(__dirname, '/home/andym/DBM_JS/DBM_JS/')}, function(err, stdout, stderr){
             if(err){
                 console.error(`exec error: ${err}`);
                 return res.send("Error");
