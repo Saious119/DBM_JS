@@ -47,6 +47,9 @@ var TerryDavisPid;
 var WSBPid;
 
 app.get('/StartUwUBot', function (req, res) {
+    if (UwUPid !== undefined) {
+        return res.send("UwUBot already running")
+    }
     UwUPid = exec('node uwu.js &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/UwUBot')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
@@ -69,6 +72,9 @@ app.get('/KillUwUBot', function(req, res){
 })
 
 app.get('/StartJonTronBot', function (req, res) {
+    if (JonTronPid !== undefined) {
+        return res.send("JonTronBot already running")
+    }
     JonTronPid = exec('node jontron.js &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/JonTronBot')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
@@ -91,6 +97,9 @@ app.get('/KillJonTronBot', function(req, res){
 })
 
 app.get('/StartOwOBot', function (req, res) {
+    if (OwOBotPid !== undefined) {
+        return res.send("OwOBot already running")
+    }
     OwOBotPid = exec('node OwOBot.js &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/OwOBot')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
@@ -113,6 +122,9 @@ app.get('/KillOwOBot', function(req, res){
 })
 
 app.get('/StartOyVeyBot', function (req, res) {
+    if (OyVeyPid !== undefined) {
+        return res.send("OyVeyBot already running")
+    }
     OyVeyPid = exec('node OyVeyBot.js &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/OyVeyBot')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
@@ -136,6 +148,9 @@ app.get('/KillOyVeyBot', function(req, res){
 
 
 app.get('/StartDickJohnson', function(req, res){
+    if (DickPid !== undefined) {
+        return res.send("DickJohnson already running")
+    }
     DickPid = exec('dotnet run &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/DickJohnson')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
@@ -158,6 +173,9 @@ app.get('/KillDickJohnson', function(req, res){
 })
 
 app.get('/StartPirateBot', function(req, res){
+    if (PiratePid !== undefined) {
+        return res.send("PirateBot already running")
+    }
     PiratePid = exec('./PirateBot &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/PirateBot')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
@@ -180,6 +198,9 @@ app.get('/KillPirateBot', function(req, res){
 })
 
 app.get('/StartTarotBot', function (req, res) {
+    if (TarotPid !== undefined) {
+        return res.send("TarotBot already running")
+    }
     TarotPid = exec('node tarot.js &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/TarotBot')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
@@ -202,6 +223,9 @@ app.get('/KillTarotBot', function(req, res){
 })
 
 app.get('/StartTerryDavisBot', function (req, res) {
+    if (TerryDavisPid !== undefined) {
+        return res.send("TerryDavisBot already running")
+    }
     TerryDavisPid = exec('node terrydavisbot.js &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/TerryDavisBot')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
@@ -224,6 +248,9 @@ app.get('/KillTerryDavisBot', function(req, res){
 })
 
 app.get('/StartWSB', function(req, res){
+    if (WSBPid !== undefined) {
+        return res.send("WSB already running")
+    }
     WSBPid = exec('./WSB &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/WSB')}, function (err, stdout, stderr) {
         if (err) {
             console.error(`exec error: ${err}`);
