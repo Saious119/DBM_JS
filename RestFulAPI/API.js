@@ -45,6 +45,7 @@ var PiratePid;
 var TarotPid;
 var TerryDavisPid;
 var WSBPid;
+var BrainCellPid;
 
 app.get('/StartUwUBot', function (req, res) {
     if (UwUPid !== undefined) {
@@ -271,7 +272,30 @@ app.get('/KillWSB', function(req, res){
     console.error("Killded good");
     res.send("Killded");
 })
+app.get('/StartBrainCellBot', function(req, res){
+    if (BrainCellPid !== undefined) {
+        return res.send("Brain Cell Bot already running")
+    }
+    BrainCellPid = exec('dotnet run &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/BrainCellBot')}, function (err, stdout, stderr) {
+        if (err) {
+            console.error(`exec error: ${err}`);
+            return res.send("Error");
+        }  
+        console.log(stdout);
+        console.error(stderr);
+        console.log("BrainCellBot Started");
+        return res.send("Success");
+    });
+    console.log(BrainCellPid.pid);
+})
 
+app.get('/KillBrainCellBot', function(req, res){
+    console.log(BrainCellPid.pid);
+    process.stdin.pause();
+    kill(BrainCellPid.pid, "SIGTERM");
+    console.error("Killded good");
+    res.send("Killded");
+})
 
 // GIT UPDATE
 app.get('/GitUpdateDBM', function(req, res){
