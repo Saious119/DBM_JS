@@ -28,6 +28,8 @@ function App() {
           <button onClick={() => fetch("https://www.fortrash.com:4000/KillTarotBot")}>basic psychology</button>
           <button onClick={() => fetch("https://www.fortrash.com:4000/StartTerryDavisBot")}>Holy C</button>
           <button onClick={() => fetch("https://www.fortrash.com:4000/KillTerryDavisBot")}>CIA</button>
+          <button onClick={() => fetch("https://www.fortrash.com:4000/StartBrainCellBot")}>Where is the brain cell?</button>
+          <button onClick={() => fetch("https://www.fortrash.com:4000/KillBrainCellBot")}>No Brain Cells</button>
           <button onClick={() => fetch("https://www.fortrash.com:4000/GitUpdateDBM")}>This Website is Old</button>
           <button onClick={() => fetch("https://www.fortrash.com:4000/GitUpdateDiscordBots")}>Fresh Bot Delivery</button>
         </div>
