@@ -15,8 +15,8 @@ var kill = require('tree-kill');
 var path = require('path');
 const { stderr } = require('process');
 const Logger = new Console ({
-    stdout: fs.createWriteStream("APILogs.txt"),
-    stderr: fs.createWriteStream("APIErrorLogs.txt"),
+    stdout: fs.createWriteStream("/home/andym/DBM_JS/DBM_JS/APILogs.txt"),
+    stderr: fs.createWriteStream("/home/andym/DBM_JS/DBM_JS/APIErrorLogs.txt"),
 });
 //const port = process.env.SERVER_PORT || 8081;
 app.use(function(req, res, next) {
