@@ -52,6 +52,7 @@ var TarotPid;
 var TerryDavisPid;
 var WSBPid;
 var BrainCellPid;
+var AndyPid;
 
 app.get('/StartUwUBot', function (req, res) {
     if (UwUPid !== undefined) {
@@ -74,8 +75,8 @@ app.get('/KillUwUBot', function(req, res){
     Logger.log(UwUPid.pid);
     process.stdin.pause();
     kill(UwUPid.pid, "SIGTERM");
-    Logger.error("Killded good");
-    res.send("Killded");
+    Logger.error("Killded UwUBot good");
+    res.send("Killded UwUBot");
 })
 
 app.get('/StartJonTronBot', function (req, res) {
@@ -124,8 +125,8 @@ app.get('/KillOwOBot', function(req, res){
     Logger.log(OwOBotPid.pid);
     process.stdin.pause();
     kill(OwOBotPid.pid, "SIGTERM");
-    Logger.error("Killded good");
-    res.send("Killded");
+    Logger.error("Killded OwOBot good");
+    res.send("Killded OwOBot");
 })
 
 app.get('/StartOyVeyBot', function (req, res) {
@@ -303,6 +304,7 @@ app.get('/KillBrainCellBot', function(req, res){
     res.send("Killded");
 })
 
+
 // GIT UPDATE
 app.get('/GitUpdateDBM', function(req, res){
     exec('git pull', {detached: true, cwd: path.resolve(__dirname, '/home/andym/DBM_JS/DBM_JS/')}, function(err, stdout, stderr){
@@ -323,7 +325,30 @@ app.get('/GitUpdateDBM', function(req, res){
         })
     })
 })
+app.get('/StartAndyBot', function(req, res){
+    if (WSBPid !== undefined) {
+        return res.send("Andy Bot already running")
+    }
+    WSBPid = exec('./AndyBot &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/AndyBot')}, function (err, stdout, stderr) {
+        if (err) {
+            Logger.error(`exec error: ${err}`);
+            return res.send("Error");
+        }  
+        Logger.log(stdout);
+        Logger.error(stderr);
+        Logger.log("AndyBot Started");
+        return res.send("Success");
+    });
+    Logger.log(AndyPid.pid);
+})
 
+app.get('/KillAndyBot', function(req, res){
+    Logger.log(AndyPid.pid);
+    process.stdin.pause();
+    kill(WSBPid.pid, "SIGTERM");
+    Logger.error("Killded AndyBot good");
+    res.send("Killded AndyBot");
+})
 app.get('/GitUpdateDiscordBots', function(req, res){
     exec('git pull', {detached: true, cwd: path.resolve(__dirname, '/home/andym/Discord-Bots/')}, function(err, stdout, stderr){
         if(err){
