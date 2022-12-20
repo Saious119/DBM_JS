@@ -50,11 +50,11 @@ app.get('/StartUwUBot', function (req, res) {
     }
     UwUPid = exec('node uwu.js &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/UwUBot')}, function (err, stdout, stderr) {
         if (err) {
-            Logger.error(`exec error: ${err}`);
+            Logger.log(`exec error: ${err}`);
             return res.send("Error");
         }  
         Logger.log(stdout);
-        Logger.error(stderr);
+        Logger.log(stderr);
         Logger.log("UwUBot Started");
         return res.send("Success");
     });
@@ -65,7 +65,7 @@ app.get('/KillUwUBot', function(req, res){
     Logger.log(UwUPid.pid);
     process.stdin.pause();
     kill(UwUPid.pid, "SIGTERM");
-    Logger.error("Killded UwUBot good");
+    Logger.log("Killded UwUBot good");
     res.send("Killded UwUBot");
 })
 
@@ -75,11 +75,11 @@ app.get('/StartJonTronBot', function (req, res) {
     }
     JonTronPid = exec('node jontron.js &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/JonTronBot')}, function (err, stdout, stderr) {
         if (err) {
-            Logger.error(`exec error: ${err}`);
+            Logger.log(`exec error: ${err}`);
             return res.send("Error");
         }  
         Logger.log(stdout);
-        Logger.error(stderr);
+        Logger.log(stderr);
         Logger.log("JonTronBot Started");
         return res.send("Success");
     });
@@ -90,7 +90,7 @@ app.get('/KillJonTronBot', function(req, res){
     Logger.log(JonTronPid.pid);
     process.stdin.pause();
     kill(JonTronPid.pid, "SIGTERM");
-    Logger.error("Killded good");
+    Logger.log("Killded good");
     res.send("Killded");
 })
 
@@ -100,11 +100,11 @@ app.get('/StartOwOBot', function (req, res) {
     }
     OwOBotPid = exec('node OwOBot.js &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/OwOBot')}, function (err, stdout, stderr) {
         if (err) {
-            Logger.error(`exec error: ${err}`);
+            Logger.log(`exec error: ${err}`);
             return res.send("Error");
         }  
         Logger.log(stdout);
-        Logger.error(stderr);
+        Logger.log(stderr);
         Logger.log("OwOBot Started");
         return res.send("Success");
     });
@@ -115,7 +115,7 @@ app.get('/KillOwOBot', function(req, res){
     Logger.log(OwOBotPid.pid);
     process.stdin.pause();
     kill(OwOBotPid.pid, "SIGTERM");
-    Logger.error("Killded OwOBot good");
+    Logger.log("Killded OwOBot good");
     res.send("Killded OwOBot");
 })
 
@@ -125,11 +125,11 @@ app.get('/StartOyVeyBot', function (req, res) {
     }
     OyVeyPid = exec('node OyVeyBot.js &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/OyVeyBot')}, function (err, stdout, stderr) {
         if (err) {
-            Logger.error(`exec error: ${err}`);
+            Logger.log(`exec error: ${err}`);
             return res.send("Error");
         } 
         Logger.log(stdout);
-        Logger.error(stderr); 
+        Logger.log(stderr); 
         Logger.log("OyVeyBot Started");
         return res.send("Success");
     });
@@ -140,7 +140,7 @@ app.get('/KillOyVeyBot', function(req, res){
     Logger.log(OyVeyPid.pid);
     process.stdin.pause();
     kill(OyVeyPid.pid, "SIGTERM");
-    Logger.error("Killded good");
+    Logger.log("Killded good");
     res.send("Killded");
 })
 
@@ -151,11 +151,11 @@ app.get('/StartDickJohnson', function(req, res){
     }
     DickPid = exec('/home/pi/dotnet6/dotnet run &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/DickJohnson')}, function (err, stdout, stderr) {
         if (err) {
-            Logger.error(`exec error: ${err}`);
+            Logger.log(`exec error: ${err}`);
             return res.send("Error");
         }  
         Logger.log(stdout);
-        Logger.error(stderr);
+        Logger.log(stderr);
         Logger.log("Dick Johnson Started");
         return res.send("Success");
     });
@@ -166,7 +166,7 @@ app.get('/KillDickJohnson', function(req, res){
     Logger.log(DickPid.pid);
     process.stdin.pause();
     kill(DickPid.pid, "SIGTERM");
-    Logger.error("Killded good");
+    Logger.log("Killded good");
     res.send("Killded");
 })
 
@@ -176,11 +176,11 @@ app.get('/StartPirateBot', function(req, res){
     }
     PiratePid = exec('./PirateBot &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/PirateBot')}, function (err, stdout, stderr) {
         if (err) {
-            Logger.error(`exec error: ${err}`);
+            Logger.log(`exec error: ${err}`);
             return res.send("Error");
         }
         Logger.log(stdout);
-        Logger.error(stderr);
+        Logger.log(stderr);
         Logger.log("Pirate Bot Started");
         return res.send("Success");
     });
@@ -191,7 +191,7 @@ app.get('/KillPirateBot', function(req, res){
     Logger.log(PiratePid.pid);
     process.stdin.pause();
     kill(PiratePid.pid, "SIGTERM");
-    Logger.error("Killded good");
+    Logger.log("Killded good");
     res.send("Killded");
 })
 
@@ -201,12 +201,12 @@ app.get('/StartTarotBot', function (req, res) {
     }
     TarotPid = exec('node tarot.js &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/TarotBot')}, function (err, stdout, stderr) {
         if (err) {
-            Logger.error(`exec error: ${err}`);
+            Logger.log(`exec error: ${err}`);
             return res.send("Error");
         }  
         Logger.log("TarotBot Started");
         Logger.log(stdout);
-        Logger.error(stderr);
+        Logger.log(stderr);
         return res.send("Success");
     });
     Logger.log(TarotPid.pid);
@@ -216,7 +216,7 @@ app.get('/KillTarotBot', function(req, res){
     Logger.log(TarotPid.pid);
     process.stdin.pause();
     kill(TarotPid.pid, "SIGTERM");
-    Logger.error("Killded good");
+    Logger.log("Killded good");
     res.send("Killded");
 })
 
@@ -226,11 +226,11 @@ app.get('/StartTerryDavisBot', function (req, res) {
     }
     TerryDavisPid = exec('node terrydavisbot.js &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/TerryDavisBot')}, function (err, stdout, stderr) {
         if (err) {
-            Logger.error(`exec error: ${err}`);
+            Logger.log(`exec error: ${err}`);
             return res.send("Error");
         }  
         Logger.log(stdout);
-        Logger.error(stderr);
+        Logger.log(stderr);
         Logger.log("TerryDavisBot Started");
         return res.send("Success");
     });
@@ -241,7 +241,7 @@ app.get('/KillTerryDavisBot', function(req, res){
     Logger.log(TerryDavisPid.pid);
     process.stdin.pause();
     kill(TerryDavisPid.pid, "SIGTERM");
-    Logger.error("Killded good");
+    Logger.log("Killded good");
     res.send("Killded");
 })
 
@@ -251,11 +251,11 @@ app.get('/StartWSB', function(req, res){
     }
     WSBPid = exec('./WSB &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/WSB')}, function (err, stdout, stderr) {
         if (err) {
-            Logger.error(`exec error: ${err}`);
+            Logger.log(`exec error: ${err}`);
             return res.send("Error");
         }  
         Logger.log(stdout);
-        Logger.error(stderr);
+        Logger.log(stderr);
         Logger.log("WSB Started");
         return res.send("Success");
     });
@@ -266,7 +266,7 @@ app.get('/KillWSB', function(req, res){
     Logger.log(WSBPid.pid);
     process.stdin.pause();
     kill(WSBPid.pid, "SIGTERM");
-    Logger.error("Killded good");
+    Logger.log("Killded good");
     res.send("Killded");
 })
 app.get('/StartBrainCellBot', function(req, res){
@@ -275,11 +275,11 @@ app.get('/StartBrainCellBot', function(req, res){
     }
     BrainCellPid = exec('/home/pi/dotnet6/dotnet run &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/BrainCellBot')}, function (err, stdout, stderr) {
         if (err) {
-            Logger.error(`exec error: ${err}`);
+            Logger.log(`exec error: ${err}`);
             return res.send("Error");
         }  
         Logger.log(stdout);
-        Logger.error(stderr);
+        Logger.log(stderr);
         Logger.log("BrainCellBot Started");
         return res.send("Success");
     });
@@ -290,7 +290,7 @@ app.get('/KillBrainCellBot', function(req, res){
     Logger.log(BrainCellPid.pid);
     process.stdin.pause();
     kill(BrainCellPid.pid, "SIGTERM");
-    Logger.error("Killded good");
+    Logger.log("Killded good");
     res.send("Killded");
 })
 
@@ -300,11 +300,11 @@ app.get('/StartAndyBot', function(req, res){
     }
     AndyPid = exec('./AndyBot &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/AndyBot')}, function (err, stdout, stderr) {
         if (err) {
-            Logger.error(`exec error: ${err}`);
+            Logger.log(`exec error: ${err}`);
             return res.send("Error");
         }  
         Logger.log(stdout);
-        Logger.error(stderr);
+        Logger.log(stderr);
         Logger.log("AndyBot Started");
         return res.send("Success");
     });
@@ -315,7 +315,7 @@ app.get('/KillAndyBot', function(req, res){
     Logger.log(AndyPid.pid);
     process.stdin.pause();
     kill(WSBPid.pid, "SIGTERM");
-    Logger.error("Killded AndyBot good");
+    Logger.log("Killded AndyBot good");
     res.send("Killded AndyBot");
 })
 
@@ -323,17 +323,17 @@ app.get('/KillAndyBot', function(req, res){
 app.get('/GitUpdateDBM', function(req, res){
     exec('git pull', {detached: true, cwd: path.resolve(__dirname, '/home/andym/DBM_JS/')}, function(err, stdout, stderr){
         if(err){
-            Logger.error(`exec error: ${err}`);
+            Logger.log(`exec error: ${err}`);
             return res.send("Error");
         }
         Logger.log("pulled latest");
         exec('bash deploy.sh', {detached: true, cwd: path.resolve(__dirname, '/home/andym/DBM_JS/')}, function(err, stdout, stderr){
             if(err){
-                Logger.error(`exec error: ${err}`);
+                Logger.log(`exec error: ${err}`);
                 return res.send("Error");
             }
             Logger.log(stdout);
-            Logger.error(stderr);
+            Logger.log(stderr);
             Logger.log("deployed latest");
             return res.send("Success");
         })
@@ -342,7 +342,7 @@ app.get('/GitUpdateDBM', function(req, res){
 app.get('/GitUpdateDiscordBots', function(req, res){
     exec('git pull', {detached: true, cwd: path.resolve(__dirname, '/home/andym/Discord-Bots/')}, function(err, stdout, stderr){
         if(err){
-            Logger.error(`exec error: ${err}`);
+            Logger.log(`exec error: ${err}`);
             return res.send("Error");
         }
         Logger.log("pulled latest");
