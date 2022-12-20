@@ -295,10 +295,10 @@ app.get('/KillBrainCellBot', function(req, res){
 })
 
 app.get('/StartAndyBot', function(req, res){
-    if (WSBPid !== undefined) {
+    if (AndyPid !== undefined) {
         return res.send("Andy Bot already running")
     }
-    WSBPid = exec('./AndyBot &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/AndyBot')}, function (err, stdout, stderr) {
+    AndyPid = exec('./AndyBot &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/AndyBot')}, function (err, stdout, stderr) {
         if (err) {
             Logger.error(`exec error: ${err}`);
             return res.send("Error");
