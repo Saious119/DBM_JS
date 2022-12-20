@@ -149,7 +149,7 @@ app.get('/StartDickJohnson', function(req, res){
     if (DickPid !== undefined) {
         return res.send("DickJohnson already running")
     }
-    DickPid = exec('dotnet run &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/DickJohnson')}, function (err, stdout, stderr) {
+    DickPid = exec('/home/pi/dotnet6/dotnet run &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/DickJohnson')}, function (err, stdout, stderr) {
         if (err) {
             Logger.error(`exec error: ${err}`);
             return res.send("Error");
