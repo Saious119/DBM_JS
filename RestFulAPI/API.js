@@ -73,7 +73,7 @@ app.get('/StartJonTronBot', function (req, res) {
     if (JonTronPid !== undefined) {
         return res.send("JonTronBot already running")
     }
-    JonTronPid = exec('node jontron.js &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/JonTronBot')}, function (err, stdout, stderr) {
+    JonTronPid = exec('node jontron.js &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/JonTronBot')}, function (err, stdout, stderr) {
         if (err) {
             Logger.error(`exec error: ${err}`);
             return res.send("Error");
@@ -123,7 +123,7 @@ app.get('/StartOyVeyBot', function (req, res) {
     if (OyVeyPid !== undefined) {
         return res.send("OyVeyBot already running")
     }
-    OyVeyPid = exec('node OyVeyBot.js &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/OyVeyBot')}, function (err, stdout, stderr) {
+    OyVeyPid = exec('node OyVeyBot.js &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/OyVeyBot')}, function (err, stdout, stderr) {
         if (err) {
             Logger.error(`exec error: ${err}`);
             return res.send("Error");
@@ -174,7 +174,7 @@ app.get('/StartPirateBot', function(req, res){
     if (PiratePid !== undefined) {
         return res.send("PirateBot already running")
     }
-    PiratePid = exec('./PirateBot &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/PirateBot')}, function (err, stdout, stderr) {
+    PiratePid = exec('./PirateBot &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/PirateBot')}, function (err, stdout, stderr) {
         if (err) {
             Logger.error(`exec error: ${err}`);
             return res.send("Error");
@@ -199,7 +199,7 @@ app.get('/StartTarotBot', function (req, res) {
     if (TarotPid !== undefined) {
         return res.send("TarotBot already running")
     }
-    TarotPid = exec('node tarot.js &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/TarotBot')}, function (err, stdout, stderr) {
+    TarotPid = exec('node tarot.js &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/TarotBot')}, function (err, stdout, stderr) {
         if (err) {
             Logger.error(`exec error: ${err}`);
             return res.send("Error");
@@ -224,7 +224,7 @@ app.get('/StartTerryDavisBot', function (req, res) {
     if (TerryDavisPid !== undefined) {
         return res.send("TerryDavisBot already running")
     }
-    TerryDavisPid = exec('node terrydavisbot.js &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/TerryDavisBot')}, function (err, stdout, stderr) {
+    TerryDavisPid = exec('node terrydavisbot.js &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/TerryDavisBot')}, function (err, stdout, stderr) {
         if (err) {
             Logger.error(`exec error: ${err}`);
             return res.send("Error");
@@ -249,7 +249,7 @@ app.get('/StartWSB', function(req, res){
     if (WSBPid !== undefined) {
         return res.send("WSB already running")
     }
-    WSBPid = exec('./WSB &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/WSB')}, function (err, stdout, stderr) {
+    WSBPid = exec('./WSB &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/WSB')}, function (err, stdout, stderr) {
         if (err) {
             Logger.error(`exec error: ${err}`);
             return res.send("Error");
@@ -273,7 +273,7 @@ app.get('/StartBrainCellBot', function(req, res){
     if (BrainCellPid !== undefined) {
         return res.send("Brain Cell Bot already running")
     }
-    BrainCellPid = exec('dotnet run &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/BrainCellBot')}, function (err, stdout, stderr) {
+    BrainCellPid = exec('dotnet run &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/BrainCellBot')}, function (err, stdout, stderr) {
         if (err) {
             Logger.error(`exec error: ${err}`);
             return res.send("Error");
@@ -294,32 +294,11 @@ app.get('/KillBrainCellBot', function(req, res){
     res.send("Killded");
 })
 
-
-// GIT UPDATE
-app.get('/GitUpdateDBM', function(req, res){
-    exec('git pull', {detached: true, cwd: path.resolve(__dirname, '/home/andym/DBM_JS/DBM_JS/')}, function(err, stdout, stderr){
-        if(err){
-            Logger.error(`exec error: ${err}`);
-            return res.send("Error");
-        }
-        Logger.log("pulled latest");
-        exec('bash deploy.sh', {detached: true, cwd: path.resolve(__dirname, '/home/andym/DBM_JS/DBM_JS/')}, function(err, stdout, stderr){
-            if(err){
-                Logger.error(`exec error: ${err}`);
-                return res.send("Error");
-            }
-            Logger.log(stdout);
-            Logger.error(stderr);
-            Logger.log("deployed latest");
-            return res.send("Success");
-        })
-    })
-})
 app.get('/StartAndyBot', function(req, res){
     if (WSBPid !== undefined) {
         return res.send("Andy Bot already running")
     }
-    WSBPid = exec('./AndyBot &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/AndyBot')}, function (err, stdout, stderr) {
+    WSBPid = exec('./AndyBot &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/AndyBot')}, function (err, stdout, stderr) {
         if (err) {
             Logger.error(`exec error: ${err}`);
             return res.send("Error");
@@ -338,6 +317,27 @@ app.get('/KillAndyBot', function(req, res){
     kill(WSBPid.pid, "SIGTERM");
     Logger.error("Killded AndyBot good");
     res.send("Killded AndyBot");
+})
+
+// GIT UPDATE
+app.get('/GitUpdateDBM', function(req, res){
+    exec('git pull', {detached: true, cwd: path.resolve(__dirname, '/home/andym/DBM_JS/')}, function(err, stdout, stderr){
+        if(err){
+            Logger.error(`exec error: ${err}`);
+            return res.send("Error");
+        }
+        Logger.log("pulled latest");
+        exec('bash deploy.sh', {detached: true, cwd: path.resolve(__dirname, '/home/andym/DBM_JS/')}, function(err, stdout, stderr){
+            if(err){
+                Logger.error(`exec error: ${err}`);
+                return res.send("Error");
+            }
+            Logger.log(stdout);
+            Logger.error(stderr);
+            Logger.log("deployed latest");
+            return res.send("Success");
+        })
+    })
 })
 app.get('/GitUpdateDiscordBots', function(req, res){
     exec('git pull', {detached: true, cwd: path.resolve(__dirname, '/home/andym/Discord-Bots/')}, function(err, stdout, stderr){
