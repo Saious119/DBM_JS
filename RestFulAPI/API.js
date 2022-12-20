@@ -273,7 +273,7 @@ app.get('/StartBrainCellBot', function(req, res){
     if (BrainCellPid !== undefined) {
         return res.send("Brain Cell Bot already running")
     }
-    BrainCellPid = exec('dotnet run &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/BrainCellBot')}, function (err, stdout, stderr) {
+    BrainCellPid = exec('/home/pi/dotnet6/dotnet run &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/BrainCellBot')}, function (err, stdout, stderr) {
         if (err) {
             Logger.error(`exec error: ${err}`);
             return res.send("Error");
