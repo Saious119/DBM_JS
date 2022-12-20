@@ -15,8 +15,8 @@ var kill = require('tree-kill');
 var path = require('path');
 const { stderr } = require('process');
 const Logger = new Console ({
-    stdout: fs.createWriteStream("/home/andym/DBM_JS/DBM_JS/APILogs.txt"),
-    stderr: fs.createWriteStream("/home/andym/DBM_JS/DBM_JS/APIErrorLogs.txt"),
+    stdout: fs.createWriteStream("/home/pi/DBM_JS/APILogs.txt"),
+    stderr: fs.createWriteStream("/home/pi/DBM_JS/APIErrorLogs.txt"),
 });
 //const port = process.env.SERVER_PORT || 8081;
 app.use(function(req, res, next) {
@@ -28,17 +28,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-https
-    .createServer(
-    // Provide the private and public key to the server by reading
-    // each file's content with the readFileSync() method.
-    {
-        key: fs.readFileSync("/etc/letsencrypt/live/www.fortrash.com/privkey.pem"),
-        cert: fs.readFileSync("/etc/letsencrypt/live/www.fortrash.com/cert.pem"),
-    },
-        app
-)
-.listen(4000, () => {
+app.listen(4000, () => {
     Logger.log("serever is runing at port 4000");
 });
 
@@ -58,7 +48,7 @@ app.get('/StartUwUBot', function (req, res) {
     if (UwUPid !== undefined) {
         return res.send("UwUBot already running")
     }
-    UwUPid = exec('node uwu.js &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/UwUBot')}, function (err, stdout, stderr) {
+    UwUPid = exec('node uwu.js &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/UwUBot')}, function (err, stdout, stderr) {
         if (err) {
             Logger.error(`exec error: ${err}`);
             return res.send("Error");
@@ -108,7 +98,7 @@ app.get('/StartOwOBot', function (req, res) {
     if (OwOBotPid !== undefined) {
         return res.send("OwOBot already running")
     }
-    OwOBotPid = exec('node OwOBot.js &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/OwOBot')}, function (err, stdout, stderr) {
+    OwOBotPid = exec('node OwOBot.js &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/OwOBot')}, function (err, stdout, stderr) {
         if (err) {
             Logger.error(`exec error: ${err}`);
             return res.send("Error");
@@ -159,7 +149,7 @@ app.get('/StartDickJohnson', function(req, res){
     if (DickPid !== undefined) {
         return res.send("DickJohnson already running")
     }
-    DickPid = exec('dotnet run &', { detached: true, cwd: path.resolve(__dirname, '../../../Discord-Bots/DickJohnson')}, function (err, stdout, stderr) {
+    DickPid = exec('dotnet run &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/DickJohnson')}, function (err, stdout, stderr) {
         if (err) {
             Logger.error(`exec error: ${err}`);
             return res.send("Error");
