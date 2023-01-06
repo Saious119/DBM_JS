@@ -324,7 +324,7 @@ app.get('/StartJailBot', function (req, res) {
     if (JailPid !== undefined) {
         return res.send("JailBot already running")
     }
-    UwUPid = exec('node JailBot.js &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/JailBot')}, function (err, stdout, stderr) {
+    JailPid = exec('node JailBot.js &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/JailBot')}, function (err, stdout, stderr) {
         if (err) {
             Logger.log(`exec error: ${err}`);
             return res.send("Error");
