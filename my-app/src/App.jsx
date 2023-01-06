@@ -32,6 +32,8 @@ function App() {
           <button onClick={() => fetch("http://192.168.1.121:4000/KillBrainCellBot")}>No Brain Cells</button>
           <button onClick={() => fetch("http://192.168.1.121:4000/StartAndyBot")}>Wise Andy Sayings</button>
           <button onClick={() => fetch("http://192.168.1.121:4000/KillAndyBot")}>STFU Andy</button>
+          <button onClick={() => fetch("http://192.168.1.121:4000/StartJailBot")}>Got To Jail</button>
+          <button onClick={() => fetch("http://192.168.1.121:4000/KillJailBot")}>Prison Break</button>
           <button onClick={() => fetch("http://192.168.1.121:4000/GitUpdateDBM")}>This Website is Old</button>
           <button onClick={() => fetch("http://192.168.1.121:4000/GitUpdateDiscordBots")}>Fresh Bot Delivery</button>
         </div>

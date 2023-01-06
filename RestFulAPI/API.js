@@ -43,6 +43,7 @@ var TerryDavisPid;
 var WSBPid;
 var BrainCellPid;
 var AndyPid;
+var JailPid
 
 app.get('/StartUwUBot', function (req, res) {
     if (UwUPid !== undefined) {
@@ -314,11 +315,35 @@ app.get('/StartAndyBot', function(req, res){
 app.get('/KillAndyBot', function(req, res){
     Logger.log(AndyPid.pid);
     process.stdin.pause();
-    kill(WSBPid.pid, "SIGTERM");
+    kill(AndyPid.pid, "SIGTERM");
     Logger.log("Killded AndyBot good");
     res.send("Killded AndyBot");
 })
 
+app.get('/StartJailBot', function (req, res) {
+    if (JailPid !== undefined) {
+        return res.send("JailBot already running")
+    }
+    UwUPid = exec('node JailBot.js &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/JailBot')}, function (err, stdout, stderr) {
+        if (err) {
+            Logger.log(`exec error: ${err}`);
+            return res.send("Error");
+        }  
+        Logger.log(stdout);
+        Logger.log(stderr);
+        Logger.log("JailBot Started");
+        return res.send("Success");
+    });
+    Logger.log(JailPid.pid);
+})
+
+app.get('/KillJailBot', function(req, res){
+    Logger.log(JailPid.pid);
+    process.stdin.pause();
+    kill(JailPid.pid, "SIGTERM");
+    Logger.log("Killded JailBot good");
+    res.send("Killded JailBot");
+})
 // GIT UPDATE
 app.get('/GitUpdateDBM', function(req, res){
     exec('git pull', {detached: true, cwd: path.resolve(__dirname, '/home/andym/DBM_JS/')}, function(err, stdout, stderr){
