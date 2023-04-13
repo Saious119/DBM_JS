@@ -58,8 +58,9 @@ app.get('/StartUwUBot', function (req, res) {
         Logger.log(stdout);
         Logger.log(stderr);
         Logger.log("UwUBot Started");
-        return res.status(200).send("Success");
+        //return res.status(200).send("Success");
     });
+    return res.status(200).send("Success");
     Logger.log(UwUPid.pid);
 })
 
