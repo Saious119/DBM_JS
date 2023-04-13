@@ -58,7 +58,6 @@ app.get('/StartUwUBot', function (req, res) {
         Logger.log(stdout);
         Logger.log(stderr);
         Logger.log("UwUBot Started");
-        //return res.status(200).send("Success");
     });
     return res.status(200).send("Success");
     Logger.log(UwUPid.pid);
@@ -84,7 +83,6 @@ app.get('/StartJonTronBot', function (req, res) {
         Logger.log(stdout);
         Logger.log(stderr);
         Logger.log("JonTronBot Started");
-        //return res.status(200).send("Success");
     });
     return res.status(200).send("Success");
     Logger.log(JonTronPid.pid);
@@ -110,7 +108,6 @@ app.get('/StartOwOBot', function (req, res) {
         Logger.log(stdout);
         Logger.log(stderr);
         Logger.log("OwOBot Started");
-        //return res.status(200).send("Success");
     });
     return res.status(200).send("Success");
     Logger.log(OwOBotPid.pid);
@@ -136,7 +133,6 @@ app.get('/StartOyVeyBot', function (req, res) {
         Logger.log(stdout);
         Logger.log(stderr); 
         Logger.log("OyVeyBot Started");
-        //return res.status(200).send("Success");
     });
     return res.status(200).send("Success");
     Logger.log(OyVeyPid.pid);
@@ -163,7 +159,6 @@ app.get('/StartDickJohnson', function(req, res){
         Logger.log(stdout);
         Logger.log(stderr);
         Logger.log("Dick Johnson Started");
-        //return res.status(200).send("Success");
     });
     return res.status(200).send("Success");
     Logger.log(DickPid.pid);
@@ -189,7 +184,6 @@ app.get('/StartPirateBot', function(req, res){
         Logger.log(stdout);
         Logger.log(stderr);
         Logger.log("Pirate Bot Started");
-        //return res.status(200).send("Success");
     });
     return res.status(200).send("Success");
     Logger.log(PiratePid.pid);
@@ -215,7 +209,6 @@ app.get('/StartTarotBot', function (req, res) {
         Logger.log("TarotBot Started");
         Logger.log(stdout);
         Logger.log(stderr);
-        //return res.status(200).send("Success");
     });
     return res.status(200).send("Success");
     Logger.log(TarotPid.pid);
@@ -241,7 +234,6 @@ app.get('/StartTerryDavisBot', function (req, res) {
         Logger.log(stdout);
         Logger.log(stderr);
         Logger.log("TerryDavisBot Started");
-        //return res.status(200).send("Success");
     });
     return res.status(200).send("Success");
     Logger.log(TerryDavisPid.pid);
@@ -267,7 +259,6 @@ app.get('/StartWSB', function(req, res){
         Logger.log(stdout);
         Logger.log(stderr);
         Logger.log("WSB Started");
-        //return res.status(200).send("Success");
     });
     return res.status(200).send("Success");
     Logger.log(WSBPid.pid);
@@ -292,7 +283,6 @@ app.get('/StartBrainCellBot', function(req, res){
         Logger.log(stdout);
         Logger.log(stderr);
         Logger.log("BrainCellBot Started");
-        //return res.status(200).send("Success");
     });
     return res.status(200).send("Success");
     Logger.log(BrainCellPid.pid);
@@ -318,7 +308,6 @@ app.get('/StartAndyBot', function(req, res){
         Logger.log(stdout);
         Logger.log(stderr);
         Logger.log("AndyBot Started");
-        //return res.status(200).send("Success");
     });
     return res.status(200).send("Success");
     Logger.log(AndyPid.pid);
@@ -344,7 +333,6 @@ app.get('/StartJailBot', function (req, res) {
         Logger.log(stdout);
         Logger.log(stderr);
         Logger.log("JailBot Started");
-        //return res.status(200).send("Success");
     });
     return res.status(200).send("Success");
     Logger.log(JailPid.pid);
@@ -373,7 +361,6 @@ app.get('/GitUpdateDBM', function(req, res){
             Logger.log(stdout);
             Logger.log(stderr);
             Logger.log("deployed latest");
-            //return res.status(200).send("Success");
         })
     })
     return res.status(200).send("Success");
@@ -385,7 +372,6 @@ app.get('/GitUpdateDiscordBots', function(req, res){
             return res.status(500).send("Error");
         }
         Logger.log("pulled latest");
-        //return res.status(200).send("Success");
     })
     return res.status(200).send("Success");
 })
