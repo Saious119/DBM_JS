@@ -50,7 +50,7 @@ app.get('/StartUwUBot', function (req, res) {
     if (UwUPid !== undefined) {
         return res.status(200).send("UwUBot already running")
     }
-    UwUPid = spawn('node uwu.js', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/UwUBot')}, function (err, stdout, stderr) {
+    UwUPid = spawn('node',['uwu.js'], { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/UwUBot')}, function (err, stdout, stderr) {
         if (err) {
             Logger.log(`exec error: ${err}`);
             return res.status(500).send("Error");
