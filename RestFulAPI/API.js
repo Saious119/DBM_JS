@@ -30,7 +30,7 @@ app.use(function(req, res, next) {
 
 app.listen(4000, () => {
     Logger.log("serever is runing at port 4000");
-    Console.log("serever is runing at port 4000");
+    console.log("serever is runing at port 4000");
 });
 
 var UwUPid;
