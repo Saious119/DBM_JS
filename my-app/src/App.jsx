@@ -53,8 +53,23 @@ function App() {
               fetch("http://192.168.1.121:4000/StartAndyBot");
               fetch("http://192.168.1.121:4000/StartJailBot");
             }
-          }>Start All</button>
-          <button>Kill All</button>
+          }>Come To Life My Creations</button>
+          <button onClick={
+            () => {
+              fetch("http://192.168.1.121:4000/KillUwUBot");
+              fetch("http://192.168.1.121:4000/KillDickJohnson");
+              fetch("http://192.168.1.121:4000/KillPirateBot");
+              fetch("http://192.168.1.121:4000/KillWSB");
+              fetch("http://192.168.1.121:4000/KillJonTronBot");
+              fetch("http://192.168.1.121:4000/KillOwOBot");
+              fetch("http://192.168.1.121:4000/KillOyVeyBot");
+              fetch("http://192.168.1.121:4000/KillTarotBot");
+              fetch("http://192.168.1.121:4000/KillTerryDavisBot");
+              fetch("http://192.168.1.121:4000/KillBrainCellBot");
+              fetch("http://192.168.1.121:4000/KillAndyBot");
+              fetch("http://192.168.1.121:4000/KillJailBot");
+            }
+          }>Back to the Morgue with Y'all</button>
         </div>
       </header>
     </div>
