@@ -30,6 +30,7 @@ app.use(function(req, res, next) {
 
 app.listen(4000, () => {
     Logger.log("serever is runing at port 4000");
+    Console.log("serever is runing at port 4000");
 });
 
 var UwUPid;
@@ -47,17 +48,17 @@ var JailPid
 
 app.get('/StartUwUBot', function (req, res) {
     if (UwUPid !== undefined) {
-        return res.send("UwUBot already running")
+        return res.status(200).send("UwUBot already running")
     }
     UwUPid = exec('node uwu.js &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/UwUBot')}, function (err, stdout, stderr) {
         if (err) {
             Logger.log(`exec error: ${err}`);
-            return res.send("Error");
+            return res.status(500).send("Error");
         }  
         Logger.log(stdout);
         Logger.log(stderr);
         Logger.log("UwUBot Started");
-        return res.send("Success");
+        return res.status(200).send("Success");
     });
     Logger.log(UwUPid.pid);
 })
@@ -67,7 +68,7 @@ app.get('/KillUwUBot', function(req, res){
     process.stdin.pause();
     kill(UwUPid.pid, "SIGTERM");
     Logger.log("Killded UwUBot good");
-    res.send("Killded UwUBot");
+    res.status(200).send("Killded UwUBot");
 })
 
 app.get('/StartJonTronBot', function (req, res) {
