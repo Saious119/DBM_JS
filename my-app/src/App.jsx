@@ -7,7 +7,7 @@ function App() {
       <header class={styles.header}>
         <img src={logo} class={styles.logo} alt="logo" />
         <p>
-          Welcome To DBM! (Discord Bot Manager) v1.0.1
+          Welcome To DBM! (Discord Bot Manager) v1.1
         </p>
         <div class={styles.buttons}>
           <button onClick={() => fetch("http://192.168.1.121:4000/StartUwUBot")}>suck peen</button>
@@ -41,10 +41,17 @@ function App() {
           <button onClick={
             () => {
               fetch("http://192.168.1.121:4000/StartUwUBot");
-              fetch("http://192.168.1.121:4000/StartDickJohnson")
-              fetch("http://192.168.1.121:4000/StartPirateBot")
-              fetch("http://192.168.1.121:4000/StartWSB")
-              fetch("http://192.168.1.121:4000/StartJonTronBot")
+              fetch("http://192.168.1.121:4000/StartDickJohnson");
+              fetch("http://192.168.1.121:4000/StartPirateBot");
+              fetch("http://192.168.1.121:4000/StartWSB");
+              fetch("http://192.168.1.121:4000/StartJonTronBot");
+              fetch("http://192.168.1.121:4000/StartOwOBot");
+              fetch("http://192.168.1.121:4000/StartOyVeyBot");
+              fetch("http://192.168.1.121:4000/StartTarotBot");
+              fetch("http://192.168.1.121:4000/StartTerryDavisBot");
+              fetch("http://192.168.1.121:4000/StartBrainCellBot");
+              fetch("http://192.168.1.121:4000/StartAndyBot");
+              fetch("http://192.168.1.121:4000/StartJailBot");
             }
           }>Start All</button>
           <button>Kill All</button>
