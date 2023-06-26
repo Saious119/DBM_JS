@@ -151,7 +151,7 @@ app.get('/StartDickJohnson', function(req, res){
     if (DickPid !== undefined) {
         return res.status(200).send("DickJohnson already running")
     }
-    DickPid = exec('/home/pi/dotnet6/dotnet run &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/DickJohnson')}, function (err, stdout, stderr) {
+    DickPid = exec('dotnet run &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/DickJohnson')}, function (err, stdout, stderr) {
         if (err) {
             Logger.log(`exec error: ${err}`);
             return res.status(500).send("Error");
@@ -275,7 +275,7 @@ app.get('/StartBrainCellBot', function(req, res){
     if (BrainCellPid !== undefined) {
         return res.status(200).send("Brain Cell Bot already running")
     }
-    BrainCellPid = exec('/home/pi/dotnet6/dotnet run &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/BrainCellBot')}, function (err, stdout, stderr) {
+    BrainCellPid = exec('dotnet run &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/BrainCellBot')}, function (err, stdout, stderr) {
         if (err) {
             Logger.log(`exec error: ${err}`);
             return res.status(500).send("Error");
