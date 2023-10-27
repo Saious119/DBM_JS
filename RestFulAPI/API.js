@@ -29,8 +29,8 @@ app.use(function(req, res, next) {
 });
 
 app.listen(4000, () => {
-    Logger.log("serever is runing at port 4000");
-    console.log("serever is runing at port 4000");
+    Logger.log("server is runing at port 4000");
+    console.log("server is runing at port 4000");
 });
 
 var UwUPid;
@@ -44,6 +44,7 @@ var TerryDavisPid;
 var WSBPid;
 var BrainCellPid;
 var AndyPid;
+var ScribePid
 var JailPid
 
 app.get('/StartUwUBot', function (req, res) {
@@ -319,6 +320,31 @@ app.get('/KillAndyBot', function(req, res){
     kill(AndyPid.pid, "SIGTERM");
     Logger.log("Killded AndyBot good");
     res.status(200).send("Killded AndyBot");
+})
+
+app.get('/StartScribeBot', function(req, res){
+    if(ScribePid !== undefined){
+        return res.status(200).send("ScribeBot is already running")
+    }
+    ScribePid = exec('python3 scribe_bot.py &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/ScribeBot')}, function (err, stdout, stderr){
+        if(err){
+            Logger.log(`exec error: ${err}`);
+            return res.status(500).send("Error");
+        }
+        Logger.log(stdout);
+        Logger.log(stderr);
+        Logger.log("JailBot Started");
+    });
+    return res.status(200).send("Success");
+    Logger.log(ScribePid);
+})
+
+app.get('/KillScribeBot', function(req, res){
+    Logger.log(ScribePid.pid);
+    process.stdin.pause();
+    kill(ScribePid.pid, "SIGTERM");
+    Logger.log("Killded ScibeBot good");
+    res.status(200).send("Killded ScribeBot");
 })
 
 app.get('/StartJailBot', function (req, res) {
