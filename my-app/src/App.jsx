@@ -34,6 +34,8 @@ function App() {
           <button onClick={() => fetch("http://192.168.1.156:4000/KillAndyBot")}>STFU Andy</button>
           <button onClick={() => fetch("http://192.168.1.156:4000/StartScribeBot")}>Write That Down!</button>
           <button onClick={() => fetch("http://192.168.1.156:4000/KillScribeBot")}>Illiteracy</button>
+          <button onClick={() => fetch("http://192.168.1.156:4000/StartHaroBot")}>Time for Warcrimes</button>
+          <button onClick={() => fetch("http://192.168.1.156:4000/KillHaroBot")}>Target Eliminated</button>
           <button onClick={() => fetch("http://192.168.1.156:4000/StartJailBot")}>Got To Jail</button>
           <button onClick={() => fetch("http://192.168.1.156:4000/KillJailBot")}>Prison Break</button>
           <button onClick={() => fetch("http://192.168.1.156:4000/StartAll")}>Come To Life My Creations</button>
@@ -54,6 +56,7 @@ function App() {
               fetch("http://192.168.1.156:4000/StartBrainCellBot");
               fetch("http://192.168.1.156:4000/StartAndyBot");
               fetch("http://192.168.1.156:4000/StartScribeBot");
+              fetch("http://192.168.1.156:4000/StartHaroBot");
               fetch("http://192.168.1.156:4000/StartJailBot");
             }
           }>Come To Life My Creations</button>
@@ -71,6 +74,7 @@ function App() {
               fetch("http://192.168.1.156:4000/KillBrainCellBot");
               fetch("http://192.168.1.156:4000/KillAndyBot");
               fetch("http://192.168.1.156:4000/KillScribeBot");
+              fetch("http://192.168.1.156:4000/KillHaroBot");
               fetch("http://192.168.1.156:4000/KillJailBot");
             }
           }>Back to the Morgue with Y'all</button>
