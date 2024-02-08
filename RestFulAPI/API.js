@@ -44,8 +44,9 @@ var TerryDavisPid;
 var WSBPid;
 var BrainCellPid;
 var AndyPid;
-var ScribePid
-var JailPid
+var ScribePid;
+var JailPid;
+var HaroPid;
 
 app.get('/StartUwUBot', function (req, res) {
     if (UwUPid !== undefined) {
@@ -370,6 +371,30 @@ app.get('/KillJailBot', function(req, res){
     kill(JailPid.pid, "SIGTERM");
     Logger.log("Killded JailBot good");
     res.status(200).send("Killded JailBot");
+})
+app.get('/StartHaroBot', function (req, res) {
+    if (HaroPid !== undefined) {
+        return res.status(200).send("HaroBot already running")
+    }
+    HaroPid = exec('python purple_haro_bot.py &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/PurpleHaroBot')}, function (err, stdout, stderr) {
+        if (err) {
+            Logger.log(`exec error: ${err}`);
+            return res.status(500).send("Error");
+        }  
+        Logger.log(stdout);
+        Logger.log(stderr);
+        Logger.log("HaroBot Started");
+    });
+    return res.status(200).send("Success");
+    Logger.log(HaroPid.pid);
+})
+
+app.get('/KillHaroBot', function(req, res){
+    Logger.log(HaroPid.pid);
+    process.stdin.pause();
+    kill(JailPid.pid, "SIGTERM");
+    Logger.log("Killded HaroBot good");
+    res.status(200).send("Killded HaroBot");
 })
 // GIT UPDATE
 app.get('/GitUpdateDBM', function(req, res){
