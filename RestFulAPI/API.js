@@ -376,7 +376,7 @@ app.get('/StartHaroBot', function (req, res) {
     if (HaroPid !== undefined) {
         return res.status(200).send("HaroBot already running")
     }
-    HaroPid = exec('python purple_haro_bot.py &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/PurpleHaroBot')}, function (err, stdout, stderr) {
+    HaroPid = exec('python3 purple_haro_bot.py &', { detached: true, cwd: path.resolve(__dirname, '../../Discord-Bots/PurpleHaroBot')}, function (err, stdout, stderr) {
         if (err) {
             Logger.log(`exec error: ${err}`);
             return res.status(500).send("Error");
