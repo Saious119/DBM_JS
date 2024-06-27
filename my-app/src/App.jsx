@@ -142,12 +142,6 @@ function App() {
           >
             Prison Break
           </button>
-          <button onClick={() => fetch("http://192.168.1.156:4000/StartAll")}>
-            Come To Life My Creations
-          </button>
-          <button onClick={() => fetch("http://192.168.1.156:4000/KillAll")}>
-            Back to the Morgue with Y'all
-          </button>
           <button
             onClick={() => fetch("http://192.168.1.156:4000/GitUpdateDBM")}
           >
