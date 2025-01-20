@@ -157,7 +157,7 @@ function App() {
           <button
             onClick={() => {
               fetch("http://192.168.1.156:4000/StartUwUBot");
-              fetch("http://192.168.1.156:4000/StartDickJohnson");
+              //fetch("http://192.168.1.156:4000/StartDickJohnson");
               fetch("http://192.168.1.156:4000/StartPirateBot");
               fetch("http://192.168.1.156:4000/StartWSB");
               fetch("http://192.168.1.156:4000/StartJonTronBot");
@@ -177,7 +177,7 @@ function App() {
           <button
             onClick={() => {
               fetch("http://192.168.1.156:4000/KillUwUBot");
-              fetch("http://192.168.1.156:4000/KillDickJohnson");
+              //fetch("http://192.168.1.156:4000/KillDickJohnson");
               fetch("http://192.168.1.156:4000/KillPirateBot");
               fetch("http://192.168.1.156:4000/KillWSB");
               fetch("http://192.168.1.156:4000/KillJonTronBot");
